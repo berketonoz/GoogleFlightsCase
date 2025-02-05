@@ -1,0 +1,449 @@
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+:root {
+  --cui-body-color: #cdcfd2;
+  --cui-secondary-color: #c8cace;
+  --cui-tertiary-color: #93999e;
+  --cui-tertiary-bg: #394457;
+  --cui-border-color: #707275;
+  --cui-calendar-cell-hover-bg: #394457;
+}
+
+.custom-date-picker {
+  --cui-date-picker-bg: #37383a;
+  --cui-date-picker-focus-bg: #37383a;
+  --cui-date-picker-placeholder-color: #9aa0a6;
+  --cui-date-picker-border-color: #707275;
+  --cui-date-picker-font-size: 16px;
+  --cui-date-picker-font-weight: 300;
+  --cui-date-picker-focus-box-shadow: none;
+  --cui-date-picker-focus-border-color: #707275;
+  --cui-date-picker-color: #e8eaed;
+  --cui-date-picker-focus-color: #e8eaed;
+  --cui-date-picker-dropdown-bg: #36373a;
+}
+
+@media (max-width: 768px) {
+  .custom-date-picker {
+    --cui-date-picker-bg: transparent;
+    --cui-date-picker-focus-bg: transparent;
+  }
+}
+
+.date-picker-input-group {
+  gap: 0rem;
+  padding: 0rem;
+  height: 56px;
+  border-radius: 4px;
+}
+
+.date-picker-input {
+  /* background-color: #fff; */
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  padding-left: 1rem;
+}
+
+.date-picker-input:last-child {
+  border-left: 0.5px solid #707275;
+}
+
+.date-picker-input:hover {
+  outline: 1.2px solid #a3a8ae;
+}
+
+.date-picker-input:focus {
+  outline: 1.2px solid #8ab4f8;
+}
+
+.date-picker-separator {
+  display: none;
+}
+
+.calendar-cell.range {
+  background-color: #394457;
+}
+
+html,
+body {
+  min-height: 100vh;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+body {
+  position: relative;
+}
+
+.search-controls {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.test-style {
+  left: 50%;
+  transform: translate3d(-50%, 0, 0);
+}
+
+.flight-search-form {
+  border-radius: 8px;
+  margin: 0 16px;
+  padding: 8px 16px 48px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .3), 0 4px 8px 3px rgba(0, 0, 0, .15);
+}
+
+.call-to-action-button {
+  border-radius: 24px;
+  padding: 8px 32px;
+}
+
+.google-maps-container {
+  background: #3c4043;
+  border-radius: 16px;
+  box-sizing: border-box;
+  display: flex;
+  height: 300px;
+  margin-top: 16px;
+  position: relative;
+}
+
+.google-map {
+  background-image: url('https://maps.googleapis.com/maps/api/staticmap?size=451x182&key=AIzaSyCMXZJgNbwR_PUfsUlyKfRldqfOyQOEd_g&language=en-US&theme=dark&scale=2&markers=scale:2|anchor:center|icon:https://www.gstatic.com/flights/app/dot_pink_21_dark_theme.png|41.0082376%2C28.9783589&markers=scale:2|anchor:center|icon:https://www.gstatic.com/flights/app/dot_blue_21_dark_theme.png|25.2048493%2C55.2707828|48.8575475%2C2.3513765|41.8967068%2C12.4822025|51.5072178%2C-0.1275862&style=feature:all|element:labels|visibility:off&style=feature:poi|element:all|visibility:off&style=feature:road|element:all|visibility:off&style=feature:transit|element:all|visibility:off&style=feature:all|element:geometry|color:0x06080c&style=feature:water|element:geometry|color:0x06080c&style=feature:administrative|element:geometry|color:0x4a5462&style=feature:landscape.natural|element:geometry|color:0x162b31&style=feature:landscape.natural.landcover|element:geometry|color:0x213f42');
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  border-radius: 16px;
+  cursor: pointer;
+  flex: 1;
+}
+
+.google-map-explore {
+  display: inline;
+}
+
+.google-map-explore-button {
+  background-color: #202124;
+  color: #8ab4f8;
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .3), 0 1px 3px 1px rgba(60, 64, 67, .15);
+  height: 32px;
+  left: 50%;
+  margin-right: -50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  padding: 0 24px 0 24px;
+  border-radius: 16px;
+  -webkit-font-smoothing: antialiased;
+
+}
+
+li.cheap-flights {
+  border: 1px solid #5f6368;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.25px;
+  line-height: 20px;
+  border-radius: 20px;
+  display: inline-block;
+  margin: 2px 8px 2px 2px;
+  padding: 6px 12px;
+  white-space: nowrap;
+  color: #e8eaed;
+
+  &.active {
+    border: 1px solid transparent;
+    color: #8ab4f8;
+    background-color: #8ab4f81f;
+  }
+}
+
+ol {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  list-style: none;
+  padding: 0;
+  display: grid;
+  margin: 16px 0;
+  grid-gap: 16px 32px;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+li.flights {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 225px;
+}
+
+.flights-image {
+  flex: 5 0;
+  border-radius: 16px;
+  background: no-repeat center/cover;
+  height: 100%;
+}
+
+.flights-info {
+  display: flex;
+  flex: 4 0;
+  flex-direction: column;
+  padding: 16px 0;
+}
+
+.flights-info-title {
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.1px;
+  line-height: 20px;
+  color: #e8eaed;
+}
+
+.flights-info-duration {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  -webkit-box-orient: vertical;
+}
+
+.text-details {
+  font-family: Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+  line-height: 20px;
+  color: #e8eaed;
+}
+
+.input-container {
+  border-radius: 8px;
+  margin: 0 16px;
+  padding: 8px 16px 48px;
+  position: relative;
+}
+
+.input-container-box {
+  box-sizing: border-box;
+}
+
+.input-dropdowns-box {
+  display: inline-flex;
+  margin-bottom: 8px;
+  margin-top: 0;
+  max-width: 100%;
+}
+
+.input-dropdowns-trip-type {
+  flex: 0 10000 auto;
+  margin-right: 4px;
+  min-width: 56px;
+}
+
+.input-dropdowns-passengers {
+  flex: 0 0 auto;
+  display: inline-block;
+}
+
+.input-dropdowns-cabin-class {
+  flex: 0 1 auto;
+  margin-left: 4px;
+  min-width: 80px;
+}
+
+.input-container-fields {
+  display: flex;
+}
+
+.location-input-container {
+  display: flex;
+  position: relative;
+  flex: 1 1 388px;
+}
+
+.date-input-container {
+  flex: 1 1 372px;
+  margin-left: 16px;
+}
+
+.swap-locations-button {
+  border-radius: 50%;
+  height: 34px;
+  margin: 11px -13px;
+  padding: 5px;
+  transition: transform .15s ease 0ms;
+  width: 34px;
+  z-index: 1;
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  fill: currentColor;
+  text-decoration: none;
+  user-select: none;
+  overflow: visible;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.swap-button-background {
+  background-color: #37383a;
+}
+
+.input-fields-container {
+  display: flex;
+}
+
+
+@media (min-width: 768px) {
+  .input-container {
+    border-width: 0;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .3), 0 4px 8px 3px rgba(0, 0, 0, .15);
+  }
+}
+
+@media (max-width: 768px) {
+  .flight-search-form {
+    padding: 0px 16px 32px;
+    margin: 0 0 16px;
+  }
+
+  .google-maps-container {
+    height: 180px;
+  }
+
+  ol {
+    grid-template-columns: auto;
+  }
+
+  .input-fields-container {
+    flex-wrap: wrap;
+  }
+
+  .date-input-container {
+    flex-grow: 1;
+    margin: 12px -1px 0 0;
+  }
+
+  .swap-button-background {
+    background-color: #202124;
+  }
+
+  li.flights {
+    flex-direction: row;
+    height: 134px;
+  }
+
+  ol {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    margin: 16px 0 0;
+    grid-gap: 16px 32px;
+  }
+
+  .flights-image {
+    border-radius: 16px;
+    flex: 3 0;
+    background: no-repeat center / cover;
+    height: 100%;
+  }
+
+  .flights-info {
+    display: flex;
+    flex: 4 0;
+    flex-direction: column;
+    padding: 16px;
+  }
+}
+
+.passenger-select {
+  background: none;
+  border: none;
+  color: #fff;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.cabin-select {
+  background: none;
+  border: none;
+  color: #fff;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.trip-type-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.trip-type-button {
+  background: none;
+  border: none;
+  color: #fff;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.trip-type-content {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #303134;
+  border-radius: 8px;
+  min-width: 180px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  margin-top: 4px;
+}
+
+.trip-type-option {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  color: #e8eaed;
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  text-align: left;
+  background: none;
+}
+
+.trip-type-option:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.trip-type-option.selected {
+  color: #8ab4f8;
+}
+
+.trip-type-option .check-icon {
+  width: 18px;
+  opacity: 0;
+}
+
+.trip-type-option.selected .check-icon {
+  opacity: 1;
+}
